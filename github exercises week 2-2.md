@@ -48,27 +48,27 @@ Name: leave it by default
 then click Add. repeat the process for HTTPS and SSH
 ```
 
-### connecting to azure virtual machine
+### Installing Ansible, Creating and Running Playbook thru Ansible
 
 1. In your Local Machine, access Azure virtual machine via SSH using the **NIC Public IP**.
 
-1. Once inside the Azure virtual Machine, install **ansible**. Type the following command: 
+2. Once inside the Azure virtual Machine, install **ansible**. Type the following command: 
 ```
 sudo apt-get install ansible -y
 ```
-2. Once Ansible has been installed, go to your */home* directory, create a folder named **apache_basic**
+3. Once Ansible has been installed, go to your */home* directory, create a folder named **apache_basic**
 ``` 
 mkdir apache_basic
 ```
-3. Go to that folder by typing this command:
+4. Go to that folder by typing this command:
 ```
 cd apache_basic
 ```
-4. Create a yml file named **install_apache.yml**
+5. Create a yml file named **install_apache.yml**
 ```
 nano install_apache.yml
 ```
-5. Write the following yml commands:
+6. Write the following yml commands:
 ```
 ---
 - hosts: localhost
@@ -81,13 +81,13 @@ nano install_apache.yml
     - name: Install latest version of Apache
       apt: name=apache2 update_cache=yes state=latest
 ```
-6. Save the **install_apache** file. then exit to nano application
+7. Save the **install_apache** file. then exit to nano application
 
-7. On the same directory, run the **install_apache.yml** file with the following commands:
+8. On the same directory, run the **install_apache.yml** file with the following commands:
 ```
 ansible-playbook install_apache.yml
 ```
-8. The output should be like this:
+9. The output should be like this:
 ```
 PLAY [Install the apache web service] *******************************************************************
 
@@ -97,8 +97,8 @@ changed: [localhost]
 PLAY RECAP **********************************************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
-9. To test if the service of apache2 is running, run this command:
+10. To test if the service of apache2 is running, run this command:
 ```
 sudo systemctl status apache2
 ```
-10. To view the sample page of Apache2, Open a web browser on you local machine and type in the **NIC Public IP** of your Azure Virtual Machine
+11. To view the sample page of Apache2, Open a web browser on you local machine and type in the **NIC Public IP** of your Azure Virtual Machine
