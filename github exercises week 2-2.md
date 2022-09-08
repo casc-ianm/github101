@@ -28,7 +28,7 @@ Screenshot your work and send to the group. No need to configure inventory etc.
 
 ## Solution
 
-### Allowing ports for SSH,http, and https in azure NSG
+### Allowing ports for SSH,HTTP, and HTTPS in azure NSG
 
 1. Open your azure portal
 2. At the home page, go to search bar and type **vitual machines**
