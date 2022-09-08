@@ -1,4 +1,4 @@
-# Github Exercise week 2-2
+# Github Exercise week sa branch dapat
 In this exercise you will learn how to install Apache webhost and how to install/configure Ansible playbook.
 
 NOTE: before you begin on this exercise, you must have a azure virtual machine running in Ubuntu and have access to internet.
