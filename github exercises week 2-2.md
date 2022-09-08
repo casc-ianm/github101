@@ -32,9 +32,9 @@ Screenshot your work and send to the group. No need to configure inventory etc.
 
 1. Open your azure portal
 2. At the home page, go to search bar and type **vitual machines**
-3. select your virtual machine then go to **networking** under *settings* tab
-4. take note your **NIC Public IP** You will be needing that to connect to your VM via **SSH** and accessing webpage via **HTTP/HTTPS** later on the exercise  
-5. check the **Inbound port rules** if port 22 (SSH), port 80 and 443 (HTTP/HTTPS) were inside of it. If NOT, click **Add inbound port rule** and do the following:
+3. Select your virtual machine then go to **networking** under *settings* tab
+4. Take note your **NIC Public IP** You will be needing that to connect to your VM via **SSH** and accessing webpage via **HTTP/HTTPS** later on the exercise  
+5. Check the **Inbound port rules** if port 22 (SSH), port 80 and 443 (HTTP/HTTPS) were inside of it. If NOT, click **Add inbound port rule** and do the following:
 ```
 Source: any
 Source port ranges: *
@@ -64,11 +64,11 @@ mkdir apache_basic
 ```
 cd apache_basic
 ```
-4. create a yml file named **install_apache.yml**
+4. Create a yml file named **install_apache.yml**
 ```
 nano install_apache.yml
 ```
-5. write the following yml commands:
+5. Write the following yml commands:
 ```
 ---
 - hosts: localhost
@@ -81,13 +81,13 @@ nano install_apache.yml
     - name: Install latest version of Apache
       apt: name=apache2 update_cache=yes state=latest
 ```
-6. save the **install_apache** file. then exit to nano application
+6. Save the **install_apache** file. then exit to nano application
 
-7. on the same directory, run the **install_apache.yml** file with the following commands:
+7. On the same directory, run the **install_apache.yml** file with the following commands:
 ```
 ansible-playbook install_apache.yml
 ```
-8. the output should be like this:
+8. The output should be like this:
 ```
 PLAY [Install the apache web service] *******************************************************************
 
@@ -97,8 +97,8 @@ changed: [localhost]
 PLAY RECAP **********************************************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
-9. to test if the service of apache2 is running, run this command:
+9. To test if the service of apache2 is running, run this command:
 ```
 sudo systemctl status apache2
 ```
-10. to view the sample page of Apache2, Open a web browser on you local machine and type in the **NIC Public IP** of your Azure Virtual Machine
+10. To view the sample page of Apache2, Open a web browser on you local machine and type in the **NIC Public IP** of your Azure Virtual Machine
